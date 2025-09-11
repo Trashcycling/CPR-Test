@@ -2,14 +2,12 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-        System.out.println("Testt0010");
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Customer customer = new Customer("1234","French","Fry");
+        StudentAccount account = new StudentAccount("12345",0,customer,"8998/4905");
+        account.AddBalance(500);
+        account.removeBalance(250);
+        account.setSchoolName("SPŠE");
+        System.out.println("[Hlášení Bankovního Účtu  " + account.getUuid() + "] " + "Student " + customer.getFirstName() +" " + customer.getLastName() + " (" + (customer.getUuid())  +")"  + " ze Školy "+  account.getSchoolName() + " má zůstatek " + account.getBalance()+account.getCurrency());
+
     }
 }
